@@ -3,7 +3,7 @@
 </div>
 
 <div class="p-2 text-dark-50">
-  <h3>Total spent: <%= @group.total_transaction %></h3>
+  <h3>Total spent: <%= @group.total_expenses %></h3>
 </div>
 
 
@@ -20,5 +20,5 @@
 <% end %>
 
 <div class="p-2 text-center">
-  <%= link_to "Add transaction", new_group_entity_path(@group, @expense), :class => "btn btn-primary" %>
+  <%= link_to "Add transaction", new_group_expense_path(@group, @expense), :class => "btn btn-primary" %>
 </div>
