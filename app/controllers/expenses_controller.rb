@@ -3,7 +3,8 @@ class ExpensesController < ApplicationController
 
   # GET /expenses or /expenses.json
   def index
-    @expenses = Expense.all
+    @group = Group.find(params[:group_id])
+    @expenses = @group.entities.all.order(created_at: :desc)
   end
 
   # GET /expenses/1 or /expenses/1.json
@@ -11,7 +12,8 @@ class ExpensesController < ApplicationController
 
   # GET /expenses/new
   def new
-    @expense = Expense.new
+    @group = Group.find(params[:group_id])
+    @expense = @group.entities.new
   end
 
   # GET /expenses/1/edit
@@ -19,15 +21,17 @@ class ExpensesController < ApplicationController
 
   # POST /expenses or /expenses.json
   def create
-    @expense = Expense.new(expense_params)
+    @group = Group.find(params[:group_id])
+    @expense = @group.expenses.create!(name: espense_params[:name], amount: espense_params[:amount],
+                                       user_id: current_user.id, group_id: @group.id)
 
     respond_to do |format|
-      if @expense.save
-        format.html { redirect_to expense_url(@expense), notice: 'Expense was successfully created.' }
-        format.json { render :show, status: :created, location: @expense }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @expense.errors, status: :unprocessable_entity }
+      format.html do
+        if @expense.save
+          redirect_to group_expenses_path(@group.id), notice: 'You have successfully created a transaction.'
+        else
+          render :new, alert: 'Error: Transaction could not be saved'
+        end
       end
     end
   end
