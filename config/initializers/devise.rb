@@ -1,24 +1,42 @@
 # frozen_string_literal: true
 
-# Assuming you have not yet modified this file, each configuration option below
-# is set to its default value. Note that some are commented out while others
-# are not: uncommented lines are intended to protect your configuration from
-# breaking changes in upgrades (i.e., in the event that future versions of
-# Devise change the default values for those options).
-#
-# Use this hook to configure devise mailer, warden hooks and so forth.
-# Many of these configuration options can be set straight in your model.
+class TurboFailureApp < Devise::FailureApp
+  def respond
+    if request_format == :turbo_stream
+      redirect
+    else
+      super
+    end
+  end
+
+  def skip_format?
+    %w(html turbo_stream */*).include? request_format.to_s
+  end
+end
 Devise.setup do |config|
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = 'd920836834b28941f06587492c19ae8979ec3fc0f4f415e3a4fa2c710ccaa84d60210fe326ff77c18e8ac7ac67061a4389d334bb535abb9be3f3a36edbb5c573'
+  # config.secret_key = '1336a60e567e9e6a5e488104a5cf3dc244875e78f9ecf71273d2c620386ecf614a8ef5cf7c88c2072e5102e14c41af27f0578d21cc959ca0227ca9f5912335b4'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
-  # config.parent_controller = 'DeviseController'
+  config.parent_controller = 'TurboDeviseController'
+  # ==> Navigation configuration
+  # ...
+  config.navigational_formats = ['*/*', :html, :turbo_stream]
+
+  # ...
+
+  # ==> Warden configuration
+  # ...
+  config.warden do |manager|
+    manager.failure_app = TurboFailureApp
+  #   manager.intercept_401 = false
+  #   manager.default_strategies(scope: :user).unshift :some_external_strategy
+  end
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -126,7 +144,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 12
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = '4484a41fd8a7f72937c554f062e42947452b54b1594a40c5caa8299a591e13bb720d7ed7aae7425b8032e1c017cd5296b4eb48523f86ca4034d6aaf3ff6cb23a'
+  # config.pepper = '00d9b5d512ef620ed3b0cdcab11c906555f59aa739a7b7614b1ec9e82f31e1ba25cca1a2577d180661bd18f7ad1c8eacfa214f0556a3da1608ec00aaf5b3e249'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
