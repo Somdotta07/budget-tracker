@@ -1,0 +1,2 @@
+class Expanse < ApplicationRecord
+end

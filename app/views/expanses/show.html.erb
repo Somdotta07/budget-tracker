@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @expanse %>
+
+<div>
+  <%= link_to "Edit this expanse", edit_expanse_path(@expanse) %> |
+  <%= link_to "Back to expanses", expanses_path %>
+
+  <%= button_to "Destroy this expanse", @expanse, method: :delete %>
+</div>
