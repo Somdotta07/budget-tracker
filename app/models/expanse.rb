@@ -1,2 +1,0 @@
-class Expanse < ApplicationRecord
-end
