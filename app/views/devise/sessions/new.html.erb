@@ -1,5 +1,17 @@
+<nav class="header">
+  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+  
+    <li>
+      <h3 class="logo-nav light">BudgetTK</h3>
+    </li>
+    <li>
+     <h3><%= link_to "Log in", new_user_session_path, :class => "btn btn-primary" %></h3>
+   </li>
+    <li>
+   </ul>
+</nav>
+
 <div class="sign-up">
-<h2>Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">

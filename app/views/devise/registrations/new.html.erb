@@ -1,18 +1,18 @@
-<nav class="navbar navbar-light bg-primary">
-<% if user_signed_in? %>
- <% if current_page?(root_path ) %>
-       <%= link_to "BudgetTK", groups_path, class: "logo-nav light" %>
-      <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "justify-content-center align-self-center btn btn-danger btn-sm sign-out" %>
- <% else  %>
-       <%= link_to "<", root_path, class: "back" %>
-       <%= link_to "BudgetTK", groups_path, class: "logo-nav light" %>
-      <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "justify-content-center align-self-center btn btn-danger btn-sm sign-out" %>
- <% end %>
-<% end %>
-</nav>
+<nav class="header">
+  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+  
+    <li>
+      <h3 class="logo-nav light">BudgetTK</h3>
+    </li>
+    <li>
+   <li>
+      <h3><%= link_to "Sign up", new_user_registration_path, :class => "btn btn-primary" %></h3>
+    </li>
+    <li>
+  </ul>
+   </nav>
 
 <div class="sign-up">
-<h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
