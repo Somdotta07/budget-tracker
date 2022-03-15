@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
   resources :users, only: [:index]
-  resources :groups, only: [:index, :show, :new, :create, :destroy] do
-    resources :expenses, only: [:index, :show, :new, :create, :destroy]
+  resources :groups, only: %i[index show new create destroy] do
+    resources :expenses, only: %i[index show new create destroy]
   end
 end

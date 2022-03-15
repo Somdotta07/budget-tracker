@@ -1,23 +1,17 @@
 class GroupsController < ApplicationController
-
   def index
     @groups = current_user.groups
   end
 
-
   def show
-
     @group = Group.find(params[:id])
   end
 
-
   def new
-
     @group = Group.new
   end
 
   def create
-
     @group = Group.create(group_params)
     @group.user_id = current_user.id
 
@@ -32,7 +26,6 @@ class GroupsController < ApplicationController
   end
 
   def destroy
-
     @group = Group.find_by(params[:id])
     @group.destroy
 
