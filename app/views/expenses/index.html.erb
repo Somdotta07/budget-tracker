@@ -1,9 +1,9 @@
 <div class="d-flex p-2 brand-text">
-  <h1><%= @group.name.capitalize %>'s transactions</h1>
+  <h3><%= @group.name.capitalize %>'s transactions</h3>
 </div>
 
 <div class="p-2 text-dark-50">
-  <h3>Total spent: <%= @group.total_expenses %></h3>
+  <h4>Total spent: <%= @group.total_expenses %></h4>
 </div>
 
 
@@ -12,13 +12,13 @@
     <div class="card p-2 bg-light">
       <div class="card-body">
         <h5 class="card-title"><%= ex.name %></h5>
-        <p class="card-text"><%= ex.amount %></p>
+        <p class="card-text">$<%= ex.amount %></p>
         <p class="card-text"><small class="text-muted"><%= ex.created_at %></small></p>
       </div>
     </div>
   </div>
 <% end %>
 
-<div class="p-2 text-center">
-  <%= link_to "Add transaction", new_group_expense_path(@group, @expense), :class => "btn btn-primary" %>
+<div class="w-100  py-1 px-1 cat-btn">
+  <%= link_to "Add transaction", new_group_expense_path(@group, @expense), :class => "btn btn-outline-light" %>
 </div>

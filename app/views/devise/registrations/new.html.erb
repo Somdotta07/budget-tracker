@@ -1,3 +1,17 @@
+<nav class="navbar navbar-light bg-primary">
+<% if user_signed_in? %>
+ <% if current_page?(root_path ) %>
+       <%= link_to "BudgetTK", groups_path, class: "logo-nav light" %>
+      <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "justify-content-center align-self-center btn btn-danger btn-sm sign-out" %>
+ <% else  %>
+       <%= link_to "<", root_path, class: "back" %>
+       <%= link_to "BudgetTK", groups_path, class: "logo-nav light" %>
+      <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "justify-content-center align-self-center btn btn-danger btn-sm sign-out" %>
+ <% end %>
+<% end %>
+</nav>
+
+<div class="sign-up">
 <h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -30,3 +44,4 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>

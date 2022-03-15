@@ -23,15 +23,6 @@ class ExpensesController < ApplicationController
     end
   end
 
-  def destroy
-    @expense = Expense.find_by(params[:id])
-    @expense.destroy
-
-    respond_to do |format|
-      format.html { redirect_to expenses_url, notice: 'Expense was successfully destroyed.' }
-    end
-  end
-
   private
 
   def set_expense
