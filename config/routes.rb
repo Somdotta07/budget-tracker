@@ -13,6 +13,6 @@ Rails.application.routes.draw do
   end
   resources :users, only: [:index]
   resources :groups, only: [:index, :show, :new, :create, :destroy] do
-    resources :expenses, only: [:show, :new, :create, :destroy]
+    resources :expenses, only: [:index, :show, :new, :create, :destroy]
   end
 end

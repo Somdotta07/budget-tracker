@@ -1,22 +1,20 @@
 class ExpensesController < ApplicationController
-
+  load_and_authorize_resource
   def index
     @group = Group.find(params[:group_id])
-    @expenses = @group.entities.all.order(created_at: :desc)
+    @expenses = @group.expenses.all.order(created_at: :desc)
   end
-
 
   def new
     @group = Group.find(params[:group_id])
     @expense = @group.expenses.new
   end
 
-
   def create
 
     @group = Group.find(params[:group_id])
-    @expense = @group.expenses.create!(name: expense_params[:name], amount: expense_params[:amount],
-                                       user_id: current_user.id, group_id: @group.id)
+    @expense = @group.expenses.create(name: expense_params[:name], amount: expense_params[:amount],
+                                      user_id: current_user.id, group_id: @group.id)
 
     respond_to do |format|
       format.html do

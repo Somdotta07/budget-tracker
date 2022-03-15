@@ -7,9 +7,9 @@ class Ability
     return unless user.present?
 
     can :manage, Group, user: user
-    can :manage, Expenses, user: user
+    can :manage, Expense, user: user
 
     can %i[read create], Group
-    can %i[read create], Expenses
+    can %i[read create], Expense
   end
 end

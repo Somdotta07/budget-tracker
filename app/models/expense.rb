@@ -1,7 +1,7 @@
 class Expense < ApplicationRecord
-  belongs_to :author, class_name: 'User'
-  has_and_belongs_to_many :groups, dependent: :destroy
+  belongs_to :user
+  belongs_to :group
 
-  validates :name, :amount, presence: true, length: { maximum: 255 }
+  validates :name, :amount, presence: true
   validates :amount, numericality: { greater_than: 0 }
 end
