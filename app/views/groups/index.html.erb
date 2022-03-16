@@ -13,8 +13,8 @@
 <% @groups.each do |group| %>
   <div class="card mb-3 bg-light" >
     <div class="row g-0">
-      <div class="col-4 py-1">
-          <img src="<%=(url_for(group.icon))%>" class="p-5 rounded img-thumbnail" alt="..." >
+      <div class="col-3 py-2 image-c">
+          <%=image_tag"#{group.icon}"%>
       </div>
       <div class="col-8">
         <div class="card-body">
