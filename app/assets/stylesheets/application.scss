@@ -1,24 +1,28 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
 @font-face {
-	font-family: 'proxima_nova_rgregular';
-	src: url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot');
-	src: url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot?#iefix') format('embedded-opentype'),
-		 url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.woff') format('woff'),
-		 url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.ttf') format('truetype'),
-		 url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.svg#proxima_nova_rgregular') format('svg');
-	font-weight: normal;
-	font-style: normal;
+  font-family: 'proxima_nova_rgregular';
+  src: url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot');
+  src:
+    url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot?#iefix') format('embedded-opentype'),
+    url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.woff') format('woff'),
+    url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.ttf') format('truetype'),
+    url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.svg#proxima_nova_rgregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
+
 @font-face {
-	font-family: 'proxima_nova_rgbold';
-	src: url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.eot');
-	src: url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.eot?#iefix') format('embedded-opentype'),
-		 url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.woff') format('woff'),
-		 url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.ttf') format('truetype'),
-		 url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.svg#proxima_nova_rgbold') format('svg');
-	font-weight: normal;
-	font-style: normal;
+  font-family: 'proxima_nova_rgbold';
+  src: url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.eot');
+  src:
+    url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.eot?#iefix') format('embedded-opentype'),
+    url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.woff') format('woff'),
+    url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.ttf') format('truetype'),
+    url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.svg#proxima_nova_rgbold') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 
 *,
@@ -79,14 +83,34 @@ h1:nth-child(2) {
   position: absolute;
   background-color: #fff;
   color: #3778c2;
-  clip-path: inset(-1% -1% 50% -1%); 
+  clip-path: inset(-1% -1% 50% -1%);
 }
 
 .sign-up {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-left: 25%;
+  margin-top: 8%;
+  border: 0.5px solid #d6dbe0;
+}
+
+form,
+input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #434b54;
+  margin-right: 2%;
+  margin-top: 5%;
+}
+
+.remember-me {
+  display: flex;
+  flex-direction: row;
+}
+
+#user_remember_me {
+  margin-top: 5%;
+  margin-left: 60%;
 }
 
 .sign-out {
@@ -94,7 +118,6 @@ h1:nth-child(2) {
   border: none;
   background: none;
 }
-
 
 .logo-nav {
   background-image:
@@ -107,7 +130,6 @@ h1:nth-child(2) {
     );
   background-size: 200% auto;
   color: #fff;
-  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: textclip 2s linear infinite;
@@ -122,6 +144,7 @@ h1:nth-child(2) {
     background-position: 200% center;
   }
 }
+
 .cat-btn {
   background-color: #5fb523;
   border: 1px solid white;
@@ -133,11 +156,19 @@ h1:nth-child(2) {
 
 .cat-btn a {
   font-size: 16px;
-  font-weight: 400; 
+  font-weight: 400;
 }
+
+.image-c {
+  border: 1px solid #d6dbe0;
+}
+
 img {
   margin-left: 15%;
+  max-width: 80%;
+  max-height: 80%;
 }
+
 .group-c {
   margin-top: 10%;
 }
@@ -158,6 +189,7 @@ img {
   font-size: 10px;
 }
 
-.card-title, .card-text {
-  color:#434b54
+.card-title,
+.card-text {
+  color: #434b54;
 }
