@@ -1,6 +1,12 @@
 # Blog-app
 
 The Budget app is a mobile application, where we can manage your budget: we have a list of transactions associated with a category, so that we can see how much money you spent and on what.
+![first page](https://user-images.githubusercontent.com/84907743/158704271-d74300db-9f2d-49a5-a5e8-a11f9ee80185.PNG)
+![Sign-up page](https://user-images.githubusercontent.com/84907743/158704110-9b83609a-fa72-453a-97fd-c91729cb1201.PNG)
+![Log-in page](https://user-images.githubusercontent.com/84907743/158704215-d4208974-abef-4d3d-9d9e-16e3796acf69.PNG)
+![Category page](https://user-images.githubusercontent.com/84907743/158704248-f91a806f-dea0-4092-bff3-49b5c45c94c4.PNG)
+![Transaction page](https://user-images.githubusercontent.com/84907743/158704290-10395adc-bd0f-4e16-a240-16cead6e403d.PNG)
+
 ## Built With
 
 - Ruby
@@ -19,7 +25,8 @@ cd budget-tracker
 Ruby
 Rails
 PostgresSQL
-
+### Live
+[link](https://murmuring-wave-54342.herokuapp.com/)
 ### Setup
 
 Install gems with:
