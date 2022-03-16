@@ -27,6 +27,8 @@ Rails
 PostgresSQL
 ### Live
 [link](https://murmuring-wave-54342.herokuapp.com/)
+### Video 
+[link](https://loom.com/share/50c2886011974a72a56af2f72dfcaa7f)
 ### Setup
 
 Install gems with:
